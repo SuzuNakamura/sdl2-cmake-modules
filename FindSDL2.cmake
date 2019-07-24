@@ -235,7 +235,7 @@ endif()
 # The Apple build may not need an explicit flag because one of the
 # frameworks may already provide it.
 # But for non-OSX systems, I will use the CMake Threads package.
-if(NOT APPLE)
+if(NOT APPLE AND NOT WIN32)
   find_package(Threads QUIET)
   if(NOT CMAKE_THREAD_LIBS_INIT)
     set(SDL2_THREADS_NOT_FOUND "Could NOT find Threads (Threads is required by SDL2).")
